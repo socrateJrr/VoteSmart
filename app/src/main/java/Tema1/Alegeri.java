@@ -12,6 +12,7 @@ public class Alegeri {
         this.idAlegeri = idAlegeri;
         this.stareAlegeri = "NEINCEPUT";
     }
+
     public String getNumeAlegeri() {
         return numeAlegeri;
     }
@@ -21,6 +22,10 @@ public class Alegeri {
     public String getStareAlegeri() {
         return stareAlegeri;
     }
+    public static ArrayList<Alegeri> getListaAlegeri() {
+        return listaAlegeri;
+    }
+
     public void creareAlegeri(String idAlegeri, String numeAlegeri){
         for(Alegeri alegeri : listaAlegeri){
             if(alegeri.idAlegeri.equals(this.idAlegeri)){

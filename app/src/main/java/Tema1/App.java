@@ -27,6 +27,19 @@ public class App {
             Alegeri alegeri = new Alegeri("", idAlegeri);
             alegeri.pornireAlegeri(idAlegeri);
         }
+        else if(comanda == 2) {
+            String idAlegeri = scanner.next();
+            String numeCircumscrptie = scanner.nextLine().trim();
+            String regiune = scanner.nextLine().trim();
+            Circumscriptie circumscriptie = new Circumscriptie();
+            circumscriptie.adaugareCircumscriptie(idAlegeri, numeCircumscrptie, regiune);
+        }
+        else if(comanda == 3) {
+            String idAlegeri = scanner.next();
+            String numeCircumscrptie = scanner.nextLine().trim();
+            Circumscriptie circumscriptie = new Circumscriptie();
+            circumscriptie.eliminareCircumscriptie(idAlegeri, numeCircumscrptie);
+        }
         else if(comanda == 18) {
             break;
         }
