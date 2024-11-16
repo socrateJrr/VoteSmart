@@ -19,12 +19,12 @@ public class App {
         if(comanda == 0) {
             String idAlegeri = scanner.next();
             String numeAlegeri = scanner.nextLine().trim();
-            Alegeri alegeri = new Alegeri(numeAlegeri, idAlegeri);
+            Alegeri alegeri = new Alegeri();
             alegeri.creareAlegeri(idAlegeri,numeAlegeri);
         }
         else if(comanda == 1) {
             String idAlegeri = scanner.nextLine().trim();
-            Alegeri alegeri = new Alegeri("", idAlegeri);
+            Alegeri alegeri = new Alegeri();
             alegeri.pornireAlegeri(idAlegeri);
         }
         else if(comanda == 2) {

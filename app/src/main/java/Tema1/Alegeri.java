@@ -7,9 +7,7 @@ public class Alegeri {
     private String stareAlegeri;
     private static ArrayList<Alegeri> listaAlegeri = new ArrayList<>();
 
-    public Alegeri(String numeAlegeri, String idAlegeri) {
-        this.numeAlegeri = numeAlegeri;
-        this.idAlegeri = idAlegeri;
+    public Alegeri() {
         this.stareAlegeri = "NEINCEPUT";
     }
 
@@ -27,6 +25,8 @@ public class Alegeri {
     }
 
     public void creareAlegeri(String idAlegeri, String numeAlegeri){
+        this.numeAlegeri = numeAlegeri;
+        this.idAlegeri = idAlegeri;
         for(Alegeri alegeri : listaAlegeri){
             if(alegeri.idAlegeri.equals(this.idAlegeri)){
                 System.out.println("EROARE: Deja exista alegeri cu id "+ this.idAlegeri);
@@ -38,6 +38,7 @@ public class Alegeri {
     }
 
     public void pornireAlegeri(String idAlegeri){
+        this.idAlegeri = idAlegeri;
         for(Alegeri alegeri : listaAlegeri){
             if(alegeri.idAlegeri.equals(this.idAlegeri)){
                 if(alegeri.stareAlegeri.equals("NEINCEPUT")){
