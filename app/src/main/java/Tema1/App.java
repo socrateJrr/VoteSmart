@@ -29,14 +29,14 @@ public class App {
         }
         else if(comanda == 2) {
             String idAlegeri = scanner.next();
-            String numeCircumscrptie = scanner.nextLine().trim();
-            String regiune = scanner.nextLine().trim();
+            String numeCircumscrptie = scanner.next();
+            String regiune = scanner.next();
             Circumscriptie circumscriptie = new Circumscriptie();
             circumscriptie.adaugareCircumscriptie(idAlegeri, numeCircumscrptie, regiune);
         }
         else if(comanda == 3) {
             String idAlegeri = scanner.next();
-            String numeCircumscrptie = scanner.nextLine().trim();
+            String numeCircumscrptie = scanner.next();
             Circumscriptie circumscriptie = new Circumscriptie();
             circumscriptie.eliminareCircumscriptie(idAlegeri, numeCircumscrptie);
         }
