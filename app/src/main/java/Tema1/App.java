@@ -13,8 +13,24 @@ public class App {
     }
 
     public void run() {
-        // Implementați aici cerințele din enunț
-        // Pentru citirea datelor de la tastatura se folosește câmpul scanner.
+    while(true) {
+        int comanda = scanner.nextInt();
+        scanner.nextLine();
+        if(comanda == 0) {
+            String idAlegeri = scanner.next();
+            String numeAlegeri = scanner.nextLine().trim();
+            Alegeri alegeri = new Alegeri(numeAlegeri, idAlegeri);
+            alegeri.creareAlegeri(idAlegeri,numeAlegeri);
+        }
+        else if(comanda == 1) {
+            String idAlegeri = scanner.nextLine().trim();
+            Alegeri alegeri = new Alegeri("", idAlegeri);
+            alegeri.pornireAlegeri(idAlegeri);
+        }
+        else if(comanda == 18) {
+            break;
+        }
+    }
     }
 
     public static void main(String[] args) {
