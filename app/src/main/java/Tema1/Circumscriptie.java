@@ -14,7 +14,7 @@ public class Circumscriptie{
         for (Alegeri alegeri : Alegeri.getListaAlegeri()){
             if(alegeri.getIdAlegeri().equals(idAlegeri)){
                 if(alegeri.getStareAlegeri().equals("NEINCEPUT")){
-                    System.out.println("Nu este perioada de votare");
+                    System.out.println("EROARE: Nu este perioada de votare");
                     return;
                 } else {
                     for(Circumscriptie circumscriptie : listaCircumscriptie){
@@ -37,7 +37,7 @@ public class Circumscriptie{
         for(Alegeri alegeri : Alegeri.getListaAlegeri()){
             if(alegeri.getIdAlegeri().equals(idAlegeri)){
                 if(alegeri.getStareAlegeri().equals("NEINCEPUT")) {
-                    System.out.println("Nu este perioada de votare");
+                    System.out.println("EROARE: Nu este perioada de votare");
                     return;
                 } else {
                     for(Circumscriptie circumscriptie : listaCircumscriptie){
@@ -47,7 +47,7 @@ public class Circumscriptie{
                             return;
                         }
                     }
-                    System.out.println("Nu exista o circumscriptie cu numele "+this.numeCircumscriptie);
+                    System.out.println("EROARE: Nu exista o circumscriptie cu numele "+this.numeCircumscriptie);
                     return;
                 }
             }
