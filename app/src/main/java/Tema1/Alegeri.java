@@ -5,7 +5,7 @@ public class Alegeri {
     private String numeAlegeri;
     private String idAlegeri;
     private String stareAlegeri;
-    private static ArrayList<Alegeri> listaAlegeri = new ArrayList<>();
+    public static ArrayList<Alegeri> listaAlegeri = new ArrayList<>();
 
     public Alegeri() {
         this.stareAlegeri = "NEINCEPUT";

@@ -23,7 +23,7 @@ public class App {
             alegeri.creareAlegeri(idAlegeri,numeAlegeri);
         }
         else if(comanda == 1) {
-            String idAlegeri = scanner.nextLine().trim();
+            String idAlegeri = scanner.next();
             Alegeri alegeri = new Alegeri();
             alegeri.pornireAlegeri(idAlegeri);
         }
