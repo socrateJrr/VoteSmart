@@ -64,6 +64,11 @@ public class App {
             Votant votant = new Votant();
             votant.adaugareVotant(idAlegeri, numeCircumscrptie, CNP, varsta, neindemanatic,nume);
         }
+        else if(comanda == 7) {
+            String idAlegeri = scanner.next();
+            Candidat candidat = new Candidat();
+            candidat.listareCandidati(idAlegeri);
+        }
         else if(comanda == 18) {
             break;
         }

@@ -1,6 +1,8 @@
 package Tema1;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Candidat extends Persoana{
     private String nume;
@@ -80,7 +82,36 @@ public class Candidat extends Persoana{
         }
         System.out.println("EROARE: Nu exista alegeri cu acest id");
     }
-    public void listareCandidati(String idAlegeri){
-
+    public void listareCandidati(String idAlegeri) {
+        for (Alegeri alegeri : Alegeri.getListaAlegeri()) {
+            if (alegeri.getIdAlegeri().equals(idAlegeri)) {
+                if (alegeri.getStareAlegeri().equals("NEINCEPUT")) {
+                    System.out.println("EROARE: Nu este perioada de votare");
+                    return;
+                } else {
+                    int nr = 0;
+                    for (Candidat candidat : listaCandidat)
+                        nr++;
+                    if (nr == 0) {
+                        System.out.println("GOL: Nu sunt candidati");
+                        return;
+                    }
+                    else
+                    {
+                        Collections.sort(listaCandidat, new Comparator<Candidat>() {
+                            @Override
+                            public int compare(Candidat o1, Candidat o2) {
+                                return o1.getCNP().compareTo(o2.getCNP());
+                            }
+                        });
+                        System.out.println("Candidatii:");
+                        for (Candidat candidat : listaCandidat) {
+                            System.out.println(candidat.getNume()+" "+candidat.getCNP()+" "+candidat.getVarsta());
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("EROARE: Nu exista alegeri cu acest id");
     }
 }
