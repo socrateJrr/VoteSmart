@@ -55,7 +55,7 @@ public class Candidat extends Persoana{
                 }
             }
         }
-       System.out.println("Nu exista alegeri cu acest id");
+       System.out.println("EROARE: Nu exista alegeri cu acest id");
     }
     public void eliminareCandidat(String idAlegeri, String CNP) {
         this.CNP = CNP;
@@ -77,6 +77,6 @@ public class Candidat extends Persoana{
                 }
             }
         }
-        System.out.println("Nu exista alegeri cu acest id");
+        System.out.println("EROARE: Nu exista alegeri cu acest id");
     }
 }
