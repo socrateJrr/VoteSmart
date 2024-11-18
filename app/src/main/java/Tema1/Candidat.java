@@ -86,7 +86,7 @@ public class Candidat extends Persoana{
         for (Alegeri alegeri : Alegeri.getListaAlegeri()) {
             if (alegeri.getIdAlegeri().equals(idAlegeri)) {
                 if (alegeri.getStareAlegeri().equals("NEINCEPUT")) {
-                    System.out.println("EROARE: Nu este perioada de votare");
+                    System.out.println("EROARE: Inca nu au inceput alegerile");
                     return;
                 } else {
                     int nr = 0;
@@ -107,6 +107,7 @@ public class Candidat extends Persoana{
                         System.out.println("Candidatii:");
                         for (Candidat candidat : listaCandidat) {
                             System.out.println(candidat.getNume()+" "+candidat.getCNP()+" "+candidat.getVarsta());
+                        return;
                         }
                     }
                 }

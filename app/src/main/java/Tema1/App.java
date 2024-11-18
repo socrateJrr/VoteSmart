@@ -69,6 +69,12 @@ public class App {
             Candidat candidat = new Candidat();
             candidat.listareCandidati(idAlegeri);
         }
+        else if(comanda == 8) {
+            String idAlegeri = scanner.next();
+            String numeCircumscrptie = scanner.next();
+            Votant votant = new Votant();
+            votant.listareVotanti(idAlegeri, numeCircumscrptie);
+        }
         else if(comanda == 18) {
             break;
         }
