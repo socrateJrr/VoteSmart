@@ -70,7 +70,7 @@ public class Candidat extends Persoana{
                     for(Candidat candidat : listaCandidat){
                         if(candidat.CNP.equals(CNP)){
                             listaCandidat.remove(this);
-                            System.out.println("S-a sters candidatul "+this.nume);
+                            System.out.println("S-a sters candidatul cu CNP-ul "+ candidat.getNume());
                             return;
                         }
                     }
