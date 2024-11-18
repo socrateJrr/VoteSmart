@@ -52,6 +52,7 @@ public class Candidat extends Persoana{
                     }
                     listaCandidat.add(this);
                     System.out.println("S-a adaugat candidatul "+nume);
+                    return;
                 }
             }
         }
@@ -63,6 +64,7 @@ public class Candidat extends Persoana{
             if(alegeri.getIdAlegeri().equals(idAlegeri)){
                 if(alegeri.getStareAlegeri().equals("NEINCEPUT")){
                     System.out.println("EROARE: Nu este perioada de votare");
+                    return;
                 }
                 else{
                     for(Candidat candidat : listaCandidat){
