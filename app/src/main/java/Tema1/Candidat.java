@@ -46,7 +46,7 @@ public class Candidat extends Persoana{
                 {
                     for(Candidat candidat : listaCandidat){
                         if(candidat.CNP.equals(CNP)){
-                            System.out.println("Candidatul "+this.nume+" are deja acelasi CNP");
+                            System.out.println("EROARE: Candidatul "+this.nume+" are deja acelasi CNP");
                             return;
                         }
                     }
