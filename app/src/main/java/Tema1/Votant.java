@@ -35,7 +35,7 @@ public class Votant extends Persoana{
                     for(Circumscriptie circumscriptie : Circumscriptie.getListaCircumscriptie()){
                         if(circumscriptie.getNumeCircumscriptie().equals(numeCircumscriptie)) {
                             for(Votant votant : listaVotant){
-                                if(votant.getCNP().equals(CNP)) {
+                                if(votant.CNP.equals(CNP)) {
                                         System.out.println("EROARE: Votantul "+this.nume+" are deja acelasi CNP");
                                         return;
                                     }

@@ -80,4 +80,7 @@ public class Candidat extends Persoana{
         }
         System.out.println("EROARE: Nu exista alegeri cu acest id");
     }
+    public void listareCandidati(String idAlegeri){
+
+    }
 }
