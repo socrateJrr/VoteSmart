@@ -45,13 +45,13 @@ public class Candidat extends Persoana{
                 else
                 {
                     for(Candidat candidat : listaCandidat){
-                        if(candidat.getCNP().equals(CNP)){
-                            System.out.println("Candidatul "+candidat.getNume()+" are deja acelasi CNP");
+                        if(candidat.CNP.equals(CNP)){
+                            System.out.println("Candidatul "+this.nume+" are deja acelasi CNP");
                             return;
                         }
                     }
                     listaCandidat.add(this);
-                    System.out.println("S-a adaugat candidatul "+nume);
+                    System.out.println("S-a adaugat candidatul "+this.nume);
                     return;
                 }
             }
@@ -68,13 +68,13 @@ public class Candidat extends Persoana{
                 }
                 else{
                     for(Candidat candidat : listaCandidat){
-                        if(candidat.getCNP().equals(CNP)){
+                        if(candidat.CNP.equals(CNP)){
                             listaCandidat.remove(this);
-                            System.out.println("S-a sters candidatul "+nume);
+                            System.out.println("S-a sters candidatul "+this.nume);
                             return;
                         }
                     }
-                    System.out.println("EROARE: Nu exista un candidat cu CNP-ul "+CNP);
+                    System.out.println("EROARE: Nu exista un candidat cu CNP-ul "+this.CNP);
                     return;
                 }
             }
