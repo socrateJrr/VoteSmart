@@ -90,6 +90,7 @@ public class Votant extends Persoana{
                                 for (Votant votant : listaVotant) {
                                     System.out.println(votant.getNume() + " " + votant.getCNP() + " " + votant.getVarsta());
                                 }
+                                return;
                             }
                         }
                     }
