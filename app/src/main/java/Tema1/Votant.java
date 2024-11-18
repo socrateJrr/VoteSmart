@@ -18,6 +18,9 @@ public class Votant extends Persoana{
     public String getCNP() {
         return CNP;
     }
+    public int getVarsta() {
+        return varsta;
+    }
 
     public void adaugareVotant(String idAlegeri, String numeCircumscriptie, String CNP, int varsta, String neindemanatic, String nume){
         this.nume = nume;
