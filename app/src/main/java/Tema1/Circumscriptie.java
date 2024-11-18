@@ -8,6 +8,15 @@ public class Circumscriptie{
     public static ArrayList<Circumscriptie> listaCircumscriptie = new ArrayList<>();
     public Circumscriptie() {
     }
+
+    public String getNumeCircumscriptie() {
+        return numeCircumscriptie;
+    }
+
+    public static ArrayList<Circumscriptie> getListaCircumscriptie() {
+        return listaCircumscriptie;
+    }
+
     public void adaugareCircumscriptie(String idAlegeri, String numeCircumscriptie, String regiune) {
         this.numeCircumscriptie = numeCircumscriptie;
         this.regiune = regiune;

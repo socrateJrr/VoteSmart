@@ -26,12 +26,11 @@ public class Candidat extends Persoana{
         this.nume = nume;
         this.varsta = varsta;
         this.CNP = CNP;
-        if(this.CNP.length() != 13)
-        {
+        if(this.CNP.length() != 13) {
             System.out.println("EROARE: CNP invalid");
             return;
         }
-        if(this.varsta < 35){
+        if(this.varsta < 35) {
             System.out.println("EROARE: Varsta invalida");
             return;
         }
@@ -70,11 +69,11 @@ public class Candidat extends Persoana{
                     for(Candidat candidat : listaCandidat){
                         if(candidat.CNP.equals(CNP)){
                             listaCandidat.remove(this);
-                            System.out.println("S-a sters candidatul cu CNP-ul "+ candidat.getNume());
+                            System.out.println("S-a sters candidatul "+ candidat.getNume());
                             return;
                         }
                     }
-                    System.out.println("EROARE: Nu exista un candidat cu CNP-ul "+this.CNP);
+                    System.out.println("EROARE: Nu exista un candidat cu CNP-ul "+ this.CNP);
                     return;
                 }
             }

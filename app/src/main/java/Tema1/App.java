@@ -54,6 +54,16 @@ public class App {
             Candidat candidat = new Candidat();
             candidat.eliminareCandidat(idAlegeri,CNP);
         }
+        else if(comanda == 6) {
+            String idAlegeri = scanner.next();
+            String numeCircumscrptie = scanner.next();
+            String CNP = scanner.next();
+            int varsta = scanner.nextInt();
+            String neindemanatic = scanner.next();
+            String nume = scanner.nextLine().trim();
+            Votant votant = new Votant();
+            votant.adaugareVotant(idAlegeri, numeCircumscrptie, CNP, varsta, neindemanatic,nume);
+        }
         else if(comanda == 18) {
             break;
         }
