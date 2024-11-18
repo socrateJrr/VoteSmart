@@ -94,7 +94,7 @@ public class Votant extends Persoana{
                             }
                         }
                     }
-                    System.out.println("EROARE: Nu exista circumscriptie cu numele "+numeCircumscriptie);
+                    System.out.println("EROARE: Nu exista o circumscriptie cu numele "+numeCircumscriptie);
                     return;
                 }
             }

@@ -108,6 +108,7 @@ public class Candidat extends Persoana{
                         for (Candidat candidat : listaCandidat) {
                             System.out.println(candidat.getNume()+" "+candidat.getCNP()+" "+candidat.getVarsta());
                         }
+                        return;
                     }
                 }
             }
