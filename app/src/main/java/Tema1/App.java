@@ -40,6 +40,20 @@ public class App {
             Circumscriptie circumscriptie = new Circumscriptie();
             circumscriptie.eliminareCircumscriptie(idAlegeri, numeCircumscrptie);
         }
+        else if(comanda == 4) {
+            String idAlegeri = scanner.next();
+            String CNP = scanner.next();
+            int varsta = scanner.nextInt();
+            String nume = scanner.nextLine().trim();
+            Candidat candidat = new Candidat();
+            candidat.adaugareCandidat(idAlegeri,CNP,varsta,nume);
+        }
+        else if(comanda == 5) {
+            String idAlegeri = scanner.next();
+            String CNP = scanner.next();
+            Candidat candidat = new Candidat();
+            candidat.eliminareCandidat(idAlegeri,CNP);
+        }
         else if(comanda == 18) {
             break;
         }
