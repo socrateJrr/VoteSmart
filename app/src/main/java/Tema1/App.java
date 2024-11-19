@@ -75,6 +75,14 @@ public class App {
             Votant votant = new Votant();
             votant.listareVotanti(idAlegeri, numeCircumscrptie);
         }
+        else if(comanda == 9){
+            String idAlegeri = scanner.next();
+            String numeCircumscrptie = scanner.next();
+            String CNPVotant = scanner.next();
+            String CNPCandidat = scanner.next();
+            Vot vot = new Vot();
+            vot.votare(idAlegeri,numeCircumscrptie,CNPVotant,CNPCandidat);
+        }
         else if(comanda == 18) {
             break;
         }

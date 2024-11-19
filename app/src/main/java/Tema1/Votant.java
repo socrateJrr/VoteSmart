@@ -9,6 +9,7 @@ public class Votant extends Persoana{
     private String CNP;
     private String neindemanatic;
     private int varsta;
+    private String numeCirc;
     public static ArrayList<Votant> listaVotant = new ArrayList<>();
     public Votant(){
     }
@@ -21,12 +22,22 @@ public class Votant extends Persoana{
     public int getVarsta() {
         return varsta;
     }
+    public static ArrayList<Votant> getListaVotant() {
+        return listaVotant;
+    }
+    public String getNumeCirc() {
+        return numeCirc;
+    }
+    public String getNeindemanatic() {
+        return neindemanatic;
+    }
 
     public void adaugareVotant(String idAlegeri, String numeCircumscriptie, String CNP, int varsta, String neindemanatic, String nume){
         this.nume = nume;
         this.CNP = CNP;
         this.varsta = varsta;
         this.neindemanatic = neindemanatic;
+        this.numeCirc = numeCircumscriptie;
 
         if(this.CNP.length() != 13) {
             System.out.println("EROARE: CNP invalid");

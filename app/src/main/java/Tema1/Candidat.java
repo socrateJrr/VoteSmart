@@ -24,6 +24,10 @@ public class Candidat extends Persoana{
     public int getVarsta() {
         return varsta;
     }
+    public static ArrayList<Candidat> getListaCandidat() {
+        return listaCandidat;
+    }
+
     public void adaugareCandidat(String idAlegeri, String CNP, int varsta, String nume) {
         this.nume = nume;
         this.varsta = varsta;
