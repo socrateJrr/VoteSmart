@@ -29,7 +29,7 @@ public class Vot {
                                                         return;
                                                     }
                                                 }
-                                                if(votant.getNeindemanatic().equals("nu"))
+                                                if(votant.getNeindemanatic().equals("da"))
                                                     vot.add(votant);
                                                 System.out.println(votant.getNume() + " a votat pentru " + candidat.getNume());
                                                 return;
