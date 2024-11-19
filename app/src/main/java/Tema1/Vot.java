@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Vot {
     public Vot(){
     }
-    public static ArrayList<Persoana> vot = new ArrayList<>();
+    public static ArrayList<Votant> vot = new ArrayList<>();
     public static ArrayList<Persoana> fraudaVotMultiplu = new ArrayList<>();
     public static ArrayList<Persoana> fraudaCircum = new ArrayList<>();
     public void votare(String idAlegeri, String numeCircumscriptie, String CNPVotant, String CNPCandidat){
@@ -22,7 +22,7 @@ public class Vot {
                                     for (Votant votant : Votant.getListaVotant()) {
                                         if (votant.getCNP().equals(CNPVotant)) {
                                             if (votant.getNumeCirc().equals(numeCircumscriptie)) {
-                                                for (Persoana persoana : vot) {
+                                                for (Votant persoana : vot) {
                                                     if (persoana.getCNP().equals(CNPVotant)) {
                                                         fraudaVotMultiplu.add(votant);
                                                         System.out.println("FRAUDA: Votantul cu CNP-ul " + CNPVotant + " a incercat sa comita o frauda. Votul a fost anulat");
