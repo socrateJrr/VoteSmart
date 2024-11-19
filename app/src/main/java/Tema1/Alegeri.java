@@ -52,5 +52,45 @@ public class Alegeri {
         }
         System.out.println("EROARE: Nu exista alegeri cu acest id");
     }
+    public void oprireAlegeri(String idAlegeri){
+        this.idAlegeri = idAlegeri;
+        for(Alegeri alegeri : listaAlegeri){
+            if(alegeri.idAlegeri.equals(this.idAlegeri)){
+                if(alegeri.stareAlegeri.equals("NEINCEPUT")){
+                    System.out.println("EROARE: Nu este perioada de votare");
+                    return;
+                }
+                else {
+                    System.out.println("S-au terminat alegerile "+ alegeri.numeAlegeri);
+                    return;
+                }
+            }
+        }
+        System.out.println("EROARE: Nu exista alegeri cu acest id");
+    }
+    public void stergeAlegeri(String idAlegeri){
+        this.idAlegeri = idAlegeri;
+        for(Alegeri alegeri : listaAlegeri){
+            if(alegeri.idAlegeri.equals(this.idAlegeri)){
+                listaAlegeri.remove(alegeri);
+                System.out.println("S-au sters alegerile "+ alegeri.numeAlegeri);
+                return;
+            }
+        }
+        System.out.println("EROARE: Nu exista alegeri cu acest id");
+    }
+    public void listareAlegeri(){
+        int ok=0;
+        for(Alegeri alegeri : listaAlegeri)
+            ok=1;
+        if(ok==0){
+            System.out.println("GOL: Nu sunt alegeri");
+            return;
+        }
+        else
+            System.out.println("Alegeri:");
+        for(Alegeri alegeri : listaAlegeri)
+            System.out.println(alegeri.idAlegeri+" "+alegeri.numeAlegeri);
+    }
 }
 

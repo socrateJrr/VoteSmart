@@ -83,8 +83,22 @@ public class App {
             Vot vot = new Vot();
             vot.votare(idAlegeri,numeCircumscrptie,CNPVotant,CNPCandidat);
         }
+        else if(comanda == 10) {
+            String idAlegeri = scanner.next();
+            Alegeri alegeri = new Alegeri();
+            alegeri.oprireAlegeri(idAlegeri);
+        }
+        else if(comanda == 16){
+            String idAlegeri = scanner.next();
+            Alegeri alegeri = new Alegeri();
+            alegeri.oprireAlegeri(idAlegeri);
+        }
+        else if(comanda == 17){
+            Alegeri alegeri = new Alegeri();
+            alegeri.listareAlegeri();
+        }
         else if(comanda == 18) {
-            break;
+            return;
         }
     }
     }
