@@ -25,7 +25,7 @@ public class Vot {
                                                 for (Votant persoana : vot) {
                                                     if (persoana.getCNP().equals(CNPVotant)) {
                                                         fraudaVotMultiplu.add(votant);
-                                                        System.out.println("FRAUDA: Votantul cu CNP-ul " + CNPVotant + " a incercat sa comita o frauda. Votul a fost anulat");
+                                                        System.out.println("FRAUDa: Votantul cu CNP-ul " + CNPVotant + " a incercat sa comita o frauda. Votul a fost anulat");
                                                         return;
                                                     }
                                                 }
@@ -35,7 +35,7 @@ public class Vot {
                                                 return;
                                             } else {
                                                 fraudaCircum.add(votant);
-                                                System.out.println("FRAUDA: Votantul cu CNP-ul " + CNPVotant + " a incercat sa comita o frauda. Votul a fost anulat");
+                                                System.out.println("FRAUDa: Votantul cu CNP-ul " + CNPVotant + " a incercat sa comita o frauda. Votul a fost anulat");
                                                 return;
                                             }
                                         }
