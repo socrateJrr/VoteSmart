@@ -91,7 +91,7 @@ public class App {
         else if(comanda == 16){
             String idAlegeri = scanner.next();
             Alegeri alegeri = new Alegeri();
-            alegeri.oprireAlegeri(idAlegeri);
+            alegeri.stergeAlegeri(idAlegeri);
         }
         else if(comanda == 17){
             Alegeri alegeri = new Alegeri();
