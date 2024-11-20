@@ -7,6 +7,7 @@ public class Vot {
     private String CNPVotant;
     private String numeCircumscriptie;
     private String numeCandidat;
+    private int numarVoturi;
     public Vot(){
     }
     public static ArrayList<Votant> vot = new ArrayList<>();

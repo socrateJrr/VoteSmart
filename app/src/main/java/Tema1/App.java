@@ -91,8 +91,8 @@ public class App {
         else if(comanda == 11) {
             String idAlegeri = scanner.next();
             String numeCircumscrptie = scanner.next();
-            Circumscriptie circumscriptie = new Circumscriptie();
-            circumscriptie.raportCircumscriptie(idAlegeri, numeCircumscrptie);
+            Analiza analiza = new Analiza();
+            analiza.raportCircumscriptie(idAlegeri, numeCircumscrptie);
         }
         else if(comanda == 16){
             String idAlegeri = scanner.next();

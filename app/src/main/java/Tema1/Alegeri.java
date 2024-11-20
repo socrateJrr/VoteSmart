@@ -61,6 +61,7 @@ public class Alegeri {
                     return;
                 }
                 else {
+                    alegeri.stareAlegeri = "TERMINAT";
                     System.out.println("S-au terminat alegerile "+ alegeri.numeAlegeri);
                     return;
                 }
