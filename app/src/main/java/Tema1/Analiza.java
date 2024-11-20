@@ -386,14 +386,11 @@ public class Analiza {
                 return v1.getRegiune().compareTo(v2.getRegiune());
             }
         });
-        int bn=0;
         System.out.println("in Romania au fost "+numarVoturiNational()+" voturi.");
-        for(Vot vot : Vot.getVotDetaliat()){
-            for(String reg : regiuniUnice)
-                if(vot.getRegiune().equals(reg))
-                    bn=1;
-        if(bn==0)
-            regiuniUnice.add(vot.getRegiune());
+        for (Vot vot : Vot.getVotDetaliat()) {
+            if (!regiuniUnice.contains(vot.getRegiune())) {
+                regiuniUnice.add(vot.getRegiune());
+            }
         }
         for(String reg : regiuniUnice) {
             System.out.println("in "+reg+" au fost "+numarVoturiRegiune(reg)+" voturi din "+numarVoturiNational()+". Adica "+numarVoturiRegiune(reg)*100/numarVoturiNational()+"%. Cele mai multe voturi au fost stranse de "+CNPCastigatorRegiune(reg)+" "+numeCastigatorRegiune(reg)+". Acestea constituie "+nrVoturiCastigatorRegiune(reg)*100/numarVoturiRegiune(reg)+"% din voturile regiunii.");
