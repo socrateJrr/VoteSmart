@@ -3,12 +3,38 @@ package Tema1;
 import java.util.ArrayList;
 
 public class Vot {
+    private String CNPCandidat;
+    private String CNPVotant;
+    private String numeCircumscriptie;
+    private String numeCandidat;
     public Vot(){
     }
     public static ArrayList<Votant> vot = new ArrayList<>();
-    public static ArrayList<Persoana> fraudaVotMultiplu = new ArrayList<>();
-    public static ArrayList<Persoana> fraudaCircum = new ArrayList<>();
+    public static ArrayList<Vot> votDetaliat  = new ArrayList<>();
+    public static ArrayList<Votant> fraudaVotMultiplu = new ArrayList<>();
+    public static ArrayList<Votant> fraudaCircum = new ArrayList<>();
+    public static ArrayList<Votant> getVot() {
+        return vot;
+    }
+    public static ArrayList<Vot> getVotDetaliat() {
+        return votDetaliat;
+    }
+    public String getCNPCandidat() {
+        return CNPCandidat;
+    }
+    public String getCNPVotant() {
+        return CNPVotant;
+    }
+    public String getNumeCircumscriptie() {
+        return numeCircumscriptie;
+    }
+    public String getNumeCandidat(){
+        return numeCandidat;
+    }
     public void votare(String idAlegeri, String numeCircumscriptie, String CNPVotant, String CNPCandidat){
+        this.numeCircumscriptie = numeCircumscriptie;
+        this.CNPVotant = CNPVotant;
+        this.CNPCandidat = CNPCandidat;
         for(Alegeri alegeri : Alegeri.getListaAlegeri()){
             if(alegeri.getIdAlegeri().equals(idAlegeri)){
                 if(alegeri.getStareAlegeri().equals("NEINCEPUT")){
@@ -29,8 +55,11 @@ public class Vot {
                                                         return;
                                                     }
                                                 }
-                                                if(votant.getNeindemanatic().equals("da"))
+                                                if(votant.getNeindemanatic().equals("da")){
                                                     vot.add(votant);
+                                                    this.numeCandidat=candidat.getNume();
+                                                    votDetaliat.add(this);
+                                                }
                                                 System.out.println(votant.getNume() + " a votat pentru " + candidat.getNume());
                                                 return;
                                             } else {

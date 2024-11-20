@@ -88,6 +88,12 @@ public class App {
             Alegeri alegeri = new Alegeri();
             alegeri.oprireAlegeri(idAlegeri);
         }
+        else if(comanda == 11) {
+            String idAlegeri = scanner.next();
+            String numeCircumscrptie = scanner.next();
+            Circumscriptie circumscriptie = new Circumscriptie();
+            circumscriptie.raportCircumscriptie(idAlegeri, numeCircumscrptie);
+        }
         else if(comanda == 16){
             String idAlegeri = scanner.next();
             Alegeri alegeri = new Alegeri();
