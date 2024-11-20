@@ -266,6 +266,6 @@ public class Analiza {
             System.out.println("GOL: Lumea nu isi exercita dreptul de vot in "+ numeCircumscriptie);
             return;
         }
-        System.out.println("in "+numeCircumscriptie+" au fost "+numarVoturiCircumscriptie(numeCircumscriptie)+" voturi din "+numarVoturiNational()+". Adica "+numarVoturiCircumscriptie(numeCircumscriptie)*100/numarVoturiNational()+"%. Cele mai multe voturi au fost stranse de "+CNPCastigatorCircumscriptie(numeCircumscriptie)+" "+numeCastigatorCircumscriptie(numeCircumscriptie)+". Acestea constituie "+numarVoturiCircumscriptie(numeCircumscriptie)*100/nrVoturiCastigatorCircumscriptie(numeCircumscriptie)+"% din voturile circumscriptiei.");
+        System.out.println("in "+numeCircumscriptie+" au fost "+numarVoturiCircumscriptie(numeCircumscriptie)+" voturi din "+numarVoturiNational()+". Adica "+numarVoturiCircumscriptie(numeCircumscriptie)*100/numarVoturiNational()+"%. Cele mai multe voturi au fost stranse de "+CNPCastigatorCircumscriptie(numeCircumscriptie)+" "+numeCastigatorCircumscriptie(numeCircumscriptie)+". Acestea constituie "+nrVoturiCastigatorCircumscriptie(numeCircumscriptie)*100/numarVoturiCircumscriptie(numeCircumscriptie)+"% din voturile circumscriptiei.");
     }
 }
