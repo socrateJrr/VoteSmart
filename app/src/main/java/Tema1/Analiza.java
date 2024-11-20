@@ -83,4 +83,51 @@ public class Analiza {
         }
         System.out.println("EROARE: Nu exista alegeri cu acest id");
     }
+    public void raportNational(String idAlegeri){
+        int ok=0;
+        for(Alegeri alegeri : Alegeri.getListaAlegeri()){
+            if(alegeri.getIdAlegeri().equals(idAlegeri)){
+                if(!alegeri.getStareAlegeri().equals("TERMINAT")) {
+                    System.out.println("EROARE: Inca nu s-a terminat votarea");
+                    return;
+                }
+                else {
+                    for(Vot vot : Vot.getVotDetaliat())
+                        ok=1;
+                    if(ok==0){
+                        System.out.println("GOL: Lumea nu isi exercita dreptul de vot in "+this.numeCircumscriptie);
+                        return;
+                    }
+                    else {
+                        for(Candidat candidat : Candidat.getListaCandidat()){
+                            int numar=0;
+                            for(Vot vot : Vot.getVotDetaliat()){
+                                if(candidat.getCNP().equals(vot.getCNPCandidat()))
+                                    numar++;
+                            }
+                            Analiza anal = new Analiza();
+                            anal.numarVoturi = numar;
+                            anal.CNPCandidat = candidat.getCNP();
+                            anal.numeCandidat = candidat.getNume();
+                            analiza.add(anal);
+                        }
+                        Collections.sort(analiza, new Comparator<Analiza>() {
+                            @Override
+                            public int compare(Analiza a1, Analiza a2) {
+                                if (a1.numarVoturi != a2.numarVoturi) {
+                                    return Integer.compare(a2.numarVoturi, a1.numarVoturi);
+                                }
+                                return a2.CNPCandidat.compareTo(a1.CNPCandidat);
+                            }
+                        });
+                        System.out.println("Raport voturi Romania:");
+                        for(Analiza analiza1 : analiza)
+                            System.out.println(analiza1.getNumeCandidat()+" "+analiza1.getCNPCandidat()+" - "+analiza1.getNumarVoturi());
+                        return;
+                    }
+                }
+            }
+        }
+        System.out.println("EROARE: Nu exista alegeri cu acest id");
+    }
 }

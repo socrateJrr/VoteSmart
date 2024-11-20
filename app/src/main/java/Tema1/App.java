@@ -94,6 +94,11 @@ public class App {
             Analiza analiza = new Analiza();
             analiza.raportCircumscriptie(idAlegeri, numeCircumscrptie);
         }
+        else if(comanda == 12){
+            String idAlegeri = scanner.next();
+            Analiza analiza = new Analiza();
+            analiza.raportNational(idAlegeri);
+        }
         else if(comanda == 16){
             String idAlegeri = scanner.next();
             Alegeri alegeri = new Alegeri();
