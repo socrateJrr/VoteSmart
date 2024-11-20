@@ -95,7 +95,7 @@ public class Analiza {
                     for(Vot vot : Vot.getVotDetaliat())
                         ok=1;
                     if(ok==0){
-                        System.out.println("GOL: Lumea nu isi exercita dreptul de vot in "+this.numeCircumscriptie);
+                        System.out.println("GOL: Lumea nu isi exercita dreptul de vot in Romania");
                         return;
                     }
                     else {
