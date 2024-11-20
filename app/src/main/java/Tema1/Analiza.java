@@ -167,7 +167,10 @@ public class Analiza {
         Collections.sort(analiza, new Comparator<Analiza>() {
             @Override
             public int compare(Analiza a1, Analiza a2) {
-                return Integer.compare(a2.numarVoturi, a1.numarVoturi);
+                if (a1.numarVoturi != a2.numarVoturi) {
+                    return Integer.compare(a2.numarVoturi, a1.numarVoturi);
+                }
+                return a2.CNPCandidat.compareTo(a1.CNPCandidat);
             }
         });
         return analiza.get(0).getNumeCandidat();
@@ -188,7 +191,10 @@ public class Analiza {
         Collections.sort(analiza, new Comparator<Analiza>() {
             @Override
             public int compare(Analiza a1, Analiza a2) {
-                return Integer.compare(a2.numarVoturi, a1.numarVoturi);
+                if (a1.numarVoturi != a2.numarVoturi) {
+                    return Integer.compare(a2.numarVoturi, a1.numarVoturi);
+                }
+                return a2.CNPCandidat.compareTo(a1.CNPCandidat);
             }
         });
         return analiza.get(0).getCNPCandidat();
@@ -211,7 +217,10 @@ public class Analiza {
         Collections.sort(analiza, new Comparator<Analiza>() {
             @Override
             public int compare(Analiza a1, Analiza a2) {
-                return Integer.compare(a2.numarVoturi, a1.numarVoturi);
+                if (a1.numarVoturi != a2.numarVoturi) {
+                    return Integer.compare(a2.numarVoturi, a1.numarVoturi);
+                }
+                return a2.CNPCandidat.compareTo(a1.CNPCandidat);
             }
         });
         return analiza.get(0).getNumarVoturi();
