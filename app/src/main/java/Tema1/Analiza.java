@@ -380,12 +380,12 @@ public class Analiza {
             System.out.println("GOL: Lumea nu isi exercita dreptul de vot in Romania");
             return;
         }
-        Collections.sort(Vot.getVotDetaliat(), new Comparator<Vot>() {
+        /*Collections.sort(Vot.getVotDetaliat(), new Comparator<Vot>() {
             @Override
             public int compare(Vot v1, Vot v2) {
                 return v1.getRegiune().compareTo(v2.getRegiune());
             }
-        });
+        });*/
         System.out.println("in Romania au fost "+numarVoturiNational()+" voturi.");
         for (Vot vot : Vot.getVotDetaliat()) {
             if (!regiuniUnice.contains(vot.getRegiune())) {
