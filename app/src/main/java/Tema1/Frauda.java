@@ -36,7 +36,7 @@ public class Frauda {
         ArrayList<Votant> frauda = Vot.getFrauda();
         for(int i=frauda.size()-1;i>=0;i--){
             Votant fr = frauda.get(i);
-            System.out.println("In "+fr.getNumeCirc()+": "+fr.getCNP()+" "+fr.getNume());
+            System.out.println("in "+fr.getNumeCirc()+": "+fr.getCNP()+" "+fr.getNume());
         }
     }
 }
