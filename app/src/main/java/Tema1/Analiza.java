@@ -53,10 +53,12 @@ public class Analiza {
                                                 numar++;
                                         }
                                     }
-                                    this.numarVoturi=numar;
-                                    this.CNPCandidat=candidat.getCNP();
-                                    this.numeCandidat=candidat.getNume();
-                                    analiza.add(this);
+                                    Analiza anal = new Analiza();
+                                    anal.numarVoturi = numar;
+                                    anal.numeCircumscriptie=this.numeCircumscriptie;
+                                    anal.CNPCandidat = candidat.getCNP();
+                                    anal.numeCandidat = candidat.getNume();
+                                    analiza.add(anal);
                                 }
                                 Collections.sort(analiza, new Comparator<Analiza>() {
                                     @Override
@@ -75,6 +77,7 @@ public class Analiza {
                         }
                     }
                     System.out.println("Nu exista o circumscriptie cu numele "+this.numeCircumscriptie);
+                    return;
                 }
             }
         }
