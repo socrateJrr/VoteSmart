@@ -76,7 +76,7 @@ public class Analiza {
                             }
                         }
                     }
-                    System.out.println("Nu exista o circumscriptie cu numele "+this.numeCircumscriptie);
+                    System.out.println("EROARE: Nu exista o circumscriptie cu numele "+this.numeCircumscriptie);
                     return;
                 }
             }
