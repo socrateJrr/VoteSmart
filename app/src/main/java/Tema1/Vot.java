@@ -7,7 +7,7 @@ public class Vot {
     private String CNPVotant;
     private String numeCircumscriptie;
     private String numeCandidat;
-    private int numarVoturi;
+    private String regiune;
     public Vot(){
     }
     public static ArrayList<Votant> vot = new ArrayList<>();
@@ -31,6 +31,9 @@ public class Vot {
     }
     public String getNumeCandidat(){
         return numeCandidat;
+    }
+    public String getRegiune() {
+        return regiune;
     }
     public void votare(String idAlegeri, String numeCircumscriptie, String CNPVotant, String CNPCandidat){
         this.numeCircumscriptie = numeCircumscriptie;
@@ -59,6 +62,7 @@ public class Vot {
                                                 if(votant.getNeindemanatic().equals("da")){
                                                     vot.add(votant);
                                                     this.numeCandidat=candidat.getNume();
+                                                    this.regiune=circumscriptie.getRegiune();
                                                     votDetaliat.add(this);
                                                 }
                                                 System.out.println(votant.getNume() + " a votat pentru " + candidat.getNume());

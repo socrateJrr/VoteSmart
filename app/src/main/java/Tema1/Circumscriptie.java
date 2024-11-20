@@ -13,7 +13,9 @@ public class Circumscriptie{
     public String getNumeCircumscriptie() {
         return numeCircumscriptie;
     }
-
+    public String getRegiune(){
+        return regiune;
+    }
     public static ArrayList<Circumscriptie> getListaCircumscriptie() {
         return listaCircumscriptie;
     }

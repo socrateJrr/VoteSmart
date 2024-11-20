@@ -144,6 +144,14 @@ public class Analiza {
         }
         return numar;
     }
+    public int numarVoturiRegiune(String regiune){
+        int numar=0;
+        for(Vot vot : Vot.getVotDetaliat()){
+            if(vot.getRegiune().equals(regiune))
+                numar++;
+        }
+        return numar;
+    }
     public int numarVoturiNational(){
         int numar=0;
         for(Vot vot : Vot.getVotDetaliat()){
@@ -201,11 +209,87 @@ public class Analiza {
         });
         return analiza.get(0).getCNPCandidat();
     }
+    public String numeCastigatorRegiune(String regiune){
+        for(Candidat candidat : Candidat.getListaCandidat()){
+            int numar=0;
+            for(Vot vot : Vot.getVotDetaliat()){
+                if(vot.getRegiune().equals(regiune))
+                    if(candidat.getCNP().equals(vot.getCNPCandidat()))
+                        numar++;
+            }
+            Analiza anal = new Analiza();
+            anal.numarVoturi = numar;
+            anal.CNPCandidat = candidat.getCNP();
+            anal.numeCandidat = candidat.getNume();
+            analiza.add(anal);
+        }
+        Collections.sort(analiza, new Comparator<Analiza>() {
+            @Override
+            public int compare(Analiza a1, Analiza a2) {
+                if (a1.numarVoturi != a2.numarVoturi) {
+                    return Integer.compare(a2.numarVoturi, a1.numarVoturi);
+                }
+                return a2.CNPCandidat.compareTo(a1.CNPCandidat);
+            }
+        });
+        return analiza.get(0).getNumeCandidat();
+    }
+    public String CNPCastigatorRegiune(String regiune){
+        for(Candidat candidat : Candidat.getListaCandidat()){
+            int numar=0;
+            for(Vot vot : Vot.getVotDetaliat()){
+                if(vot.getRegiune().equals(regiune))
+                    if(candidat.getCNP().equals(vot.getCNPCandidat()))
+                        numar++;
+            }
+            Analiza anal = new Analiza();
+            anal.numarVoturi = numar;
+            anal.CNPCandidat = candidat.getCNP();
+            anal.numeCandidat = candidat.getNume();
+            analiza.add(anal);
+        }
+        Collections.sort(analiza, new Comparator<Analiza>() {
+            @Override
+            public int compare(Analiza a1, Analiza a2) {
+                if (a1.numarVoturi != a2.numarVoturi) {
+                    return Integer.compare(a2.numarVoturi, a1.numarVoturi);
+                }
+                return a2.CNPCandidat.compareTo(a1.CNPCandidat);
+            }
+        });
+        return analiza.get(0).getCNPCandidat();
+    }
     public int nrVoturiCastigatorCircumscriptie(String numeCircumscriptie){
         for(Candidat candidat : Candidat.getListaCandidat()){
             int numar=0;
             for(Vot vot : Vot.getVotDetaliat()){
                 if(vot.getNumeCircumscriptie().equals(this.numeCircumscriptie)){
+                    if(candidat.getCNP().equals(vot.getCNPCandidat()))
+                        numar++;
+                }
+            }
+            Analiza anal = new Analiza();
+            anal.numarVoturi = numar;
+            anal.CNPCandidat = candidat.getCNP();
+            anal.numeCandidat = candidat.getNume();
+            analiza.add(anal);
+        }
+        Collections.sort(analiza, new Comparator<Analiza>() {
+            @Override
+            public int compare(Analiza a1, Analiza a2) {
+                if (a1.numarVoturi != a2.numarVoturi) {
+                    return Integer.compare(a2.numarVoturi, a1.numarVoturi);
+                }
+                return a2.CNPCandidat.compareTo(a1.CNPCandidat);
+            }
+        });
+        return analiza.get(0).getNumarVoturi();
+    }
+    public int nrVoturiCastigatorRegiune(String regiune){
+        for(Candidat candidat : Candidat.getListaCandidat()){
+            int numar=0;
+            for(Vot vot : Vot.getVotDetaliat()){
+                if(vot.getRegiune().equals(regiune)){
                     if(candidat.getCNP().equals(vot.getCNPCandidat()))
                         numar++;
                 }
@@ -267,5 +351,43 @@ public class Analiza {
             return;
         }
         System.out.println("in "+numeCircumscriptie+" au fost "+numarVoturiCircumscriptie(numeCircumscriptie)+" voturi din "+numarVoturiNational()+". Adica "+numarVoturiCircumscriptie(numeCircumscriptie)*100/numarVoturiNational()+"%. Cele mai multe voturi au fost stranse de "+CNPCastigatorCircumscriptie(numeCircumscriptie)+" "+numeCastigatorCircumscriptie(numeCircumscriptie)+". Acestea constituie "+nrVoturiCastigatorCircumscriptie(numeCircumscriptie)*100/numarVoturiCircumscriptie(numeCircumscriptie)+"% din voturile circumscriptiei.");
+    }
+    public void raportDetaliatNational(String idAlegeri){
+        int ok=0;
+        for(Alegeri alegeri : Alegeri.getListaAlegeri()){
+            if(alegeri.getIdAlegeri().equals(idAlegeri)){
+                ok=1;
+            }
+        }
+        if(ok==0){
+            System.out.println("EROARE: Nu exista alegeri cu acest id");
+            return;
+        }
+        for(Alegeri alegeri : Alegeri.getListaAlegeri()) {
+            if (alegeri.getIdAlegeri().equals(idAlegeri)) {
+                if (!alegeri.getStareAlegeri().equals("TERMINAT")) {
+                    System.out.println("EROARE: Inca nu s-a terminat votarea");
+                    return;
+                }
+            }
+        }
+        ok=0;
+        for(Vot vot : Vot.getVotDetaliat()){
+            ok=1;
+        }
+        if(ok==0){
+            System.out.println("GOL: Lumea nu isi exercita dreptul de vot in Romania");
+            return;
+        }
+        Collections.sort(Vot.getVotDetaliat(), new Comparator<Vot>() {
+            @Override
+            public int compare(Vot v1, Vot v2) {
+                return v1.getRegiune().compareTo(v2.getRegiune());
+            }
+        });
+        System.out.println("in Romania au fost "+numarVoturiNational()+" voturi.");
+        for(Vot vot : Vot.getVotDetaliat()) {
+            System.out.println("in "+vot.getRegiune()+" au fost "+numarVoturiRegiune(vot.getRegiune())+" voturi din "+numarVoturiNational()+". Adica "+numarVoturiRegiune(vot.getRegiune())*100/numarVoturiNational()+"%. Cele mai multe voturi au fost stranse de "+CNPCastigatorRegiune(vot.getRegiune())+" "+numeCastigatorRegiune(vot.getRegiune())+". Acestea constituie "+nrVoturiCastigatorRegiune(vot.getRegiune())*100/numarVoturiRegiune(vot.getRegiune())+"% din voturile regiunii.");
+        }
     }
 }
