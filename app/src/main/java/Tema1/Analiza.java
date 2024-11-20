@@ -12,6 +12,7 @@ public class Analiza {
     private String numeCastgator;
     private String CNPCastigator;
     public static ArrayList<Analiza> analiza = new ArrayList<Analiza>();
+    ArrayList<String> regiuniUnice = new ArrayList<>();
     public Analiza() {
     }
     public String getNumeCircumscriptie() {
@@ -385,9 +386,17 @@ public class Analiza {
                 return v1.getRegiune().compareTo(v2.getRegiune());
             }
         });
+        int bn=0;
         System.out.println("in Romania au fost "+numarVoturiNational()+" voturi.");
-        for(Vot vot : Vot.getVotDetaliat()) {
-            System.out.println("in "+vot.getRegiune()+" au fost "+numarVoturiRegiune(vot.getRegiune())+" voturi din "+numarVoturiNational()+". Adica "+numarVoturiRegiune(vot.getRegiune())*100/numarVoturiNational()+"%. Cele mai multe voturi au fost stranse de "+CNPCastigatorRegiune(vot.getRegiune())+" "+numeCastigatorRegiune(vot.getRegiune())+". Acestea constituie "+nrVoturiCastigatorRegiune(vot.getRegiune())*100/numarVoturiRegiune(vot.getRegiune())+"% din voturile regiunii.");
+        for(Vot vot : Vot.getVotDetaliat()){
+            for(String reg : regiuniUnice)
+                if(vot.getRegiune().equals(reg))
+                    bn=1;
+        if(bn==0)
+            regiuniUnice.add(vot.getRegiune());
+        }
+        for(String reg : regiuniUnice) {
+            System.out.println("in "+reg+" au fost "+numarVoturiRegiune(reg)+" voturi din "+numarVoturiNational()+". Adica "+numarVoturiRegiune(reg)*100/numarVoturiNational()+"%. Cele mai multe voturi au fost stranse de "+CNPCastigatorRegiune(reg)+" "+numeCastigatorRegiune(reg)+". Acestea constituie "+nrVoturiCastigatorRegiune(reg)*100/numarVoturiRegiune(reg)+"% din voturile regiunii.");
         }
     }
 }
