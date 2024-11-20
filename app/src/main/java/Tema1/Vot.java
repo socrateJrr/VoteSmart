@@ -12,13 +12,15 @@ public class Vot {
     }
     public static ArrayList<Votant> vot = new ArrayList<>();
     public static ArrayList<Vot> votDetaliat  = new ArrayList<>();
-    public static ArrayList<Votant> fraudaVotMultiplu = new ArrayList<>();
-    public static ArrayList<Votant> fraudaCircum = new ArrayList<>();
+    public static ArrayList<Votant> frauda = new ArrayList<>();
     public static ArrayList<Votant> getVot() {
         return vot;
     }
     public static ArrayList<Vot> getVotDetaliat() {
         return votDetaliat;
+    }
+    public static ArrayList<Votant> getFrauda() {
+        return frauda;
     }
     public String getCNPCandidat() {
         return CNPCandidat;
@@ -54,7 +56,7 @@ public class Vot {
                                             if (votant.getNumeCirc().equals(numeCircumscriptie)) {
                                                 for (Votant persoana : vot) {
                                                     if (persoana.getCNP().equals(CNPVotant)) {
-                                                        fraudaVotMultiplu.add(votant);
+                                                        frauda.add(votant);
                                                         System.out.println("FRAUDa: Votantul cu CNP-ul " + CNPVotant + " a incercat sa comita o frauda. Votul a fost anulat");
                                                         return;
                                                     }
@@ -68,7 +70,7 @@ public class Vot {
                                                 System.out.println(votant.getNume() + " a votat pentru " + candidat.getNume());
                                                 return;
                                             } else {
-                                                fraudaCircum.add(votant);
+                                                frauda.add(votant);
                                                 System.out.println("FRAUDa: Votantul cu CNP-ul " + CNPVotant + " a incercat sa comita o frauda. Votul a fost anulat");
                                                 return;
                                             }

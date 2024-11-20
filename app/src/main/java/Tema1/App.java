@@ -110,6 +110,11 @@ public class App {
             Analiza analiza = new Analiza();
             analiza.raportDetaliatNational(idAlegeri);
         }
+        else if(comanda == 15){
+            String idAlegeri = scanner.next();
+            Frauda frauda = new Frauda();
+            frauda.raportFrauda(idAlegeri);
+        }
         else if(comanda == 16){
             String idAlegeri = scanner.next();
             Alegeri alegeri = new Alegeri();
