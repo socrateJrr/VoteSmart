@@ -155,8 +155,9 @@ public class Analiza {
         for(Candidat candidat : Candidat.getListaCandidat()){
             int numar=0;
             for(Vot vot : Vot.getVotDetaliat()){
-                if(candidat.getCNP().equals(vot.getCNPCandidat()))
-                    numar++;
+                if(vot.getNumeCircumscriptie().equals(numeCircumscriptie))
+                    if(candidat.getCNP().equals(vot.getCNPCandidat()))
+                        numar++;
             }
             Analiza anal = new Analiza();
             anal.numarVoturi = numar;
@@ -179,8 +180,9 @@ public class Analiza {
         for(Candidat candidat : Candidat.getListaCandidat()){
             int numar=0;
             for(Vot vot : Vot.getVotDetaliat()){
-                if(candidat.getCNP().equals(vot.getCNPCandidat()))
-                    numar++;
+                if(vot.getNumeCircumscriptie().equals(numeCircumscriptie))
+                    if(candidat.getCNP().equals(vot.getCNPCandidat()))
+                        numar++;
             }
             Analiza anal = new Analiza();
             anal.numarVoturi = numar;
@@ -255,10 +257,11 @@ public class Analiza {
             }
         }
         ok=0;
-        for(Vot vot : Vot.getVotDetaliat())
+        for(Vot vot : Vot.getVotDetaliat()){
             if(vot.getNumeCircumscriptie().equals(numeCircumscriptie)){
                     ok=1;
             }
+        }
         if(ok==0){
             System.out.println("GOL: Lumea nu isi exercita dreptul de vot in "+ numeCircumscriptie);
             return;
