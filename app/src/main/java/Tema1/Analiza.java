@@ -9,8 +9,6 @@ public class Analiza {
     private String numeCandidat;
     private int numarVoturi;
     private String CNPCandidat;
-    private String numeCastgator;
-    private String CNPCastigator;
     public static ArrayList<Analiza> analiza = new ArrayList<Analiza>();
     ArrayList<String> regiuniUnice = new ArrayList<>();
     public Analiza() {
@@ -74,7 +72,6 @@ public class Analiza {
                                     }
                                 });
                                 System.out.println("Raport voturi "+this.numeCircumscriptie+":");
-                                okk=0;
                                 for(Analiza analiza1 : analiza)
                                     System.out.println(analiza1.getNumeCandidat()+" "+analiza1.getCNPCandidat()+" - "+analiza1.getNumarVoturi());
                                 return;
@@ -161,6 +158,7 @@ public class Analiza {
         return numar;
     }
     public String numeCastigatorCircumscriptie(String numeCircumscriptie){
+        analiza.clear();
         for(Candidat candidat : Candidat.getListaCandidat()){
             int numar=0;
             for(Vot vot : Vot.getVotDetaliat()){
@@ -186,6 +184,7 @@ public class Analiza {
         return analiza.get(0).getNumeCandidat();
     }
     public String CNPCastigatorCircumscriptie(String numeCircumscriptie){
+        analiza.clear();
         for(Candidat candidat : Candidat.getListaCandidat()){
             int numar=0;
             for(Vot vot : Vot.getVotDetaliat()){
@@ -211,6 +210,7 @@ public class Analiza {
         return analiza.get(0).getCNPCandidat();
     }
     public String numeCastigatorRegiune(String regiune){
+        analiza.clear();
         for(Candidat candidat : Candidat.getListaCandidat()){
             int numar=0;
             for(Vot vot : Vot.getVotDetaliat()){
@@ -236,6 +236,7 @@ public class Analiza {
         return analiza.get(0).getNumeCandidat();
     }
     public String CNPCastigatorRegiune(String regiune){
+        analiza.clear();
         for(Candidat candidat : Candidat.getListaCandidat()){
             int numar=0;
             for(Vot vot : Vot.getVotDetaliat()){
@@ -287,6 +288,7 @@ public class Analiza {
         return analiza.get(0).getNumarVoturi();
     }
     public int nrVoturiCastigatorRegiune(String regiune){
+        analiza.clear();
         for(Candidat candidat : Candidat.getListaCandidat()){
             int numar=0;
             for(Vot vot : Vot.getVotDetaliat()){
@@ -380,12 +382,12 @@ public class Analiza {
             System.out.println("GOL: Lumea nu isi exercita dreptul de vot in Romania");
             return;
         }
-        /*Collections.sort(Vot.getVotDetaliat(), new Comparator<Vot>() {
+        Collections.sort(Vot.getVotDetaliat(), new Comparator<Vot>() {
             @Override
             public int compare(Vot v1, Vot v2) {
                 return v1.getRegiune().compareTo(v2.getRegiune());
             }
-        });*/
+        });
         System.out.println("in Romania au fost "+numarVoturiNational()+" voturi.");
         for (Vot vot : Vot.getVotDetaliat()) {
             if (!regiuniUnice.contains(vot.getRegiune())) {
