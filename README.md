@@ -21,21 +21,21 @@
 - Acestea merg pe aceeasi idee unde parcurgem atat alegerile, circumscriptiile sa verificam cazurile limita si mai apoi ori afisam daca gasim, ori  stergem din array
 
 ## Clasa Votant
-- seamana cu Candidat doar ca acum este descris profilul celui care voteaza
+- Seamana cu Candidat doar ca acum este descris profilul celui care voteaza
 
 ## Clasa Vot
-- functia de votare parcurge atat array ul de alegeri, circumscriptie, candidat si votant pentru a verifica conditiile de extrema, apoi adauga votantul in votDetaliat, un array care tine minte fiecare ce a votat, unde, iar tot aici exista si array de frauda in caz ca a votat de doua ori sau unde nu trebuie asta fiind verificata din parcurgerea si array ului votDetaliat
+- Functia de votare parcurge atat array ul de alegeri, circumscriptie, candidat si votant pentru a verifica conditiile de extrema, apoi adauga votantul in votDetaliat, un array care tine minte fiecare ce a votat, unde, iar tot aici exista si array de frauda in caz ca a votat de doua ori sau unde nu trebuie asta fiind verificata din parcurgerea si array ului votDetaliat
 
 ## Clasa Analiza
 #### Functia raportCircumscriptie/ raportNational
-- parcurgem din nou array ul cu alegeri, circumscriptii, vot si vom crea o alta lista de tip Analiza care contine candidatii, cate voturi au fiecare din ce regiune si asa mai departe
-- sortam ca sa aflam castigatorul cu Collections.sort
+- Parcurgem din nou array ul cu alegeri, circumscriptii, vot si vom crea o alta lista de tip Analiza care contine candidatii, cate voturi au fiecare din ce regiune si asa mai departe
+- Sortam ca sa aflam castigatorul cu Collections.sort
 #### Functia raportDetaliatCircumscriptie/ National
-- pentru asta facem functii separate pentru nr voturi national, circumscriptie, regiune, pentru castigator pe regiune, national(sortez aici ca sa aflu castigatorul), cate voturi are si functii pentru cnp si nume
-- astfel voi parcurge ca la toate celelate, tratand exceptiile si afisand conform formatului
+- Pentru asta facem functii separate pentru nr voturi national, circumscriptie, regiune, pentru castigator pe regiune, national(sortez aici ca sa aflu castigatorul), cate voturi are si functii pentru cnp si nume
+- Astfel voi parcurge ca la toate celelate, tratand exceptiile si afisand conform formatului
 
 ## Clasa Frauda
-- aici am salvat din clasa Vot oamenii care au incercat sa fraudeze si informatii despre ei, pe care le am transferat aici si am parcurs din nou ca la fiecare functie si am afisat conform formatului
+- Aici am salvat din clasa Vot oamenii care au incercat sa fraudeze si informatii despre ei, pe care le am transferat aici si am parcurs din nou ca la fiecare functie si am afisat conform formatului
 
 ## App.java
-- in main doar citesc fiecare comanda si conform ei, citesc corespunzator datele si doar creez instanta a clasei respective, fara parametrii si apelez functia
+- In main doar citesc fiecare comanda si conform ei, citesc corespunzator datele si doar creez instanta a clasei respective, fara parametrii si apelez functia
