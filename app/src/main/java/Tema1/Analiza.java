@@ -262,6 +262,7 @@ public class Analiza {
         return analiza.get(0).getCNPCandidat();
     }
     public int nrVoturiCastigatorCircumscriptie(String numeCircumscriptie){
+        analiza.clear();
         for(Candidat candidat : Candidat.getListaCandidat()){
             int numar=0;
             for(Vot vot : Vot.getVotDetaliat()){
