@@ -262,7 +262,6 @@ public class Analiza {
         return analiza.get(0).getCNPCandidat();
     }
     public int nrVoturiCastigatorCircumscriptie(String numeCircumscriptie){
-        analiza.clear();
         for(Candidat candidat : Candidat.getListaCandidat()){
             int numar=0;
             for(Vot vot : Vot.getVotDetaliat()){
@@ -347,7 +346,7 @@ public class Analiza {
         ok=0;
         for(Vot vot : Vot.getVotDetaliat()){
             if(vot.getNumeCircumscriptie().equals(numeCircumscriptie)){
-                    ok=1;
+                ok=1;
             }
         }
         if(ok==0){
