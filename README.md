@@ -38,4 +38,4 @@
 - Aici am salvat din clasa Vot oamenii care au incercat sa fraudeze si informatii despre ei, pe care le am transferat aici si am parcurs din nou ca la fiecare functie si am afisat conform formatului
 
 ## App.java
-- In main doar citesc fiecare comanda si conform ei, citesc corespunzator datele si doar creez instanta a clasei respective, fara parametrii si apelez functia
+- In main doar citesc fiecare comanda si conform ei, citesc corespunzator datele si doar creez instanta a clasei respective, fara parametrii si apelez functia.
