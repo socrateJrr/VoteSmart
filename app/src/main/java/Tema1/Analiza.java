@@ -353,7 +353,7 @@ public class Analiza {
             System.out.println("GOL: Lumea nu isi exercita dreptul de vot in "+ numeCircumscriptie);
             return;
         }
-        System.out.println("in "+numeCircumscriptie+" au fost "+numarVoturiCircumscriptie(numeCircumscriptie)+" voturi din "+numarVoturiNational()+". Adica "+numarVoturiCircumscriptie(numeCircumscriptie)*100/numarVoturiNational()+"%. Cele mai multe voturi au fost stranse de "+CNPCastigatorCircumscriptie(numeCircumscriptie)+" "+numeCastigatorCircumscriptie(numeCircumscriptie)+". Acestea constituie "+nrVoturiCastigatorCircumscriptie(numeCircumscriptie)*100/numarVoturiCircumscriptie(numeCircumscriptie)+"% din voturile circumscriptiei.");
+        System.out.println("In "+numeCircumscriptie+" au fost "+numarVoturiCircumscriptie(numeCircumscriptie)+" voturi din "+numarVoturiNational()+". Adica "+numarVoturiCircumscriptie(numeCircumscriptie)*100/numarVoturiNational()+"%. Cele mai multe voturi au fost stranse de "+CNPCastigatorCircumscriptie(numeCircumscriptie)+" "+numeCastigatorCircumscriptie(numeCircumscriptie)+". Acestea constituie "+nrVoturiCastigatorCircumscriptie(numeCircumscriptie)*100/numarVoturiCircumscriptie(numeCircumscriptie)+"% din voturile circumscriptiei.");
     }
     public void raportDetaliatNational(String idAlegeri){
         int ok=0;
@@ -388,14 +388,14 @@ public class Analiza {
                 return v1.getRegiune().compareTo(v2.getRegiune());
             }
         });
-        System.out.println("in Romania au fost "+numarVoturiNational()+" voturi.");
+        System.out.println("In Romania au fost "+numarVoturiNational()+" voturi.");
         for (Vot vot : Vot.getVotDetaliat()) {
             if (!regiuniUnice.contains(vot.getRegiune())) {
                 regiuniUnice.add(vot.getRegiune());
             }
         }
         for(String reg : regiuniUnice) {
-            System.out.println("in "+reg+" au fost "+numarVoturiRegiune(reg)+" voturi din "+numarVoturiNational()+". Adica "+numarVoturiRegiune(reg)*100/numarVoturiNational()+"%. Cele mai multe voturi au fost stranse de "+CNPCastigatorRegiune(reg)+" "+numeCastigatorRegiune(reg)+". Acestea constituie "+nrVoturiCastigatorRegiune(reg)*100/numarVoturiRegiune(reg)+"% din voturile regiunii.");
+            System.out.println("In "+reg+" au fost "+numarVoturiRegiune(reg)+" voturi din "+numarVoturiNational()+". Adica "+numarVoturiRegiune(reg)*100/numarVoturiNational()+"%. Cele mai multe voturi au fost stranse de "+CNPCastigatorRegiune(reg)+" "+numeCastigatorRegiune(reg)+". Acestea constituie "+nrVoturiCastigatorRegiune(reg)*100/numarVoturiRegiune(reg)+"% din voturile regiunii.");
         }
     }
 }
