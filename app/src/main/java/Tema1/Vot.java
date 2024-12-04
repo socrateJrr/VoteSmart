@@ -56,11 +56,13 @@ public class Vot {
                                             if (votant.getNumeCirc().equals(numeCircumscriptie)) {
                                                 for (Votant persoana : vot) {
                                                     if (persoana.getCNP().equals(CNPVotant)) {
+                                                        //vot dublicat
                                                         frauda.add(votant);
                                                         System.out.println("FRAUDA: Votantul cu CNP-ul " + CNPVotant + " a incercat sa comita o frauda. Votul a fost anulat");
                                                         return;
                                                     }
                                                 }
+                                                //in vot adaugam toti oamenii prezenti la vot, iar in votDetaliat voturile valide
                                                 if(votant.getNeindemanatic().equals("nu")){
                                                     vot.add(votant);
                                                     this.numeCandidat=candidat.getNume();
@@ -73,6 +75,7 @@ public class Vot {
                                                 System.out.println(votant.getNume() + " a votat pentru " + candidat.getNume());
                                                 return;
                                             } else {
+                                                //se voteaza in alta circumscriptie
                                                 frauda.add(votant);
                                                 System.out.println("FRAUDA: Votantul cu CNP-ul " + CNPVotant + " a incercat sa comita o frauda. Votul a fost anulat");
                                                 return;

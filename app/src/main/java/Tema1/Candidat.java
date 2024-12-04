@@ -32,6 +32,7 @@ public class Candidat extends Persoana{
         this.nume = nume;
         this.varsta = varsta;
         this.CNP = CNP;
+        //verificam conditiile
         if(this.CNP.length() != 13) {
             System.out.println("EROARE: CNP invalid");
             return;
@@ -55,6 +56,7 @@ public class Candidat extends Persoana{
                             return;
                         }
                     }
+                    // daca s a ajuns aici, putem adauga candidatul
                     listaCandidat.add(this);
                     System.out.println("S-a adaugat candidatul "+this.nume);
                     return;
@@ -74,6 +76,7 @@ public class Candidat extends Persoana{
                 else{
                     for(Candidat candidat : listaCandidat){
                         if(candidat.CNP.equals(CNP)){
+                            //in acest caz putem sterge candidatul
                             listaCandidat.remove(this);
                             System.out.println("S-a sters candidatul "+ candidat.getNume());
                             return;
@@ -102,6 +105,7 @@ public class Candidat extends Persoana{
                     }
                     else
                     {
+                        //sortam candidatii
                         Collections.sort(listaCandidat, new Comparator<Candidat>() {
                             @Override
                             public int compare(Candidat o1, Candidat o2) {

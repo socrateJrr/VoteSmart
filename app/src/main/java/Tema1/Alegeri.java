@@ -33,6 +33,7 @@ public class Alegeri {
                 return;
             }
         }
+        // daca s a ajuns aici, inseamna ca putem adauga alegerile
         listaAlegeri.add(this);
         System.out.println("S-au creat alegerile "+ this.numeAlegeri);
     }
@@ -42,6 +43,7 @@ public class Alegeri {
         for(Alegeri alegeri : listaAlegeri){
             if(alegeri.idAlegeri.equals(this.idAlegeri)){
                 if(alegeri.stareAlegeri.equals("NEINCEPUT")){
+                    // putem incepe alegerile
                     alegeri.stareAlegeri = "IN_CURS";
                     System.out.println("Au pornit alegerile "+ alegeri.numeAlegeri);
                 }
@@ -61,6 +63,7 @@ public class Alegeri {
                     return;
                 }
                 else {
+                    //putem opri alegerile
                     alegeri.stareAlegeri = "TERMINAT";
                     System.out.println("S-au terminat alegerile "+ alegeri.numeAlegeri);
                     return;

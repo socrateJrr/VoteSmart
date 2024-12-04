@@ -55,6 +55,7 @@ public class Analiza {
                                                 numar++;
                                         }
                                     }
+                                    // adaugam intr un array de tip Analiza toate detaliile legate de analiza, castigatori, voturi
                                     Analiza anal = new Analiza();
                                     anal.numarVoturi = numar;
                                     anal.numeCircumscriptie=this.numeCircumscriptie;
@@ -62,6 +63,7 @@ public class Analiza {
                                     anal.numeCandidat = candidat.getNume();
                                     analiza.add(anal);
                                 }
+                                //si sortam sa vedem clasamentul
                                 Collections.sort(analiza, new Comparator<Analiza>() {
                                     @Override
                                     public int compare(Analiza a1, Analiza a2) {
@@ -101,6 +103,7 @@ public class Analiza {
                         return;
                     }
                     else {
+                        //facem acelasi lucru ca la circumscriptie
                         for(Candidat candidat : Candidat.getListaCandidat()){
                             int numar=0;
                             for(Vot vot : Vot.getVotDetaliat()){
@@ -134,6 +137,7 @@ public class Analiza {
         }
         System.out.println("EROARE: Nu exista alegeri cu acest id");
     }
+    //pentru raport detaliat facem functie pentru fiecare detaliu de afisat, castigator, voturi castigator, nume, nr voturi total
     public int numarVoturiCircumscriptie(String numeCircumscriptie){
         int numar=0;
         for(Vot vot : Vot.getVotDetaliat()){
@@ -353,6 +357,7 @@ public class Analiza {
             System.out.println("GOL: Lumea nu isi exercita dreptul de vot in "+ numeCircumscriptie);
             return;
         }
+        //daca ajungem aici, sunt verificate toate conditiile si afisam rezultatul functiilor
         System.out.println("In "+numeCircumscriptie+" au fost "+numarVoturiCircumscriptie(numeCircumscriptie)+" voturi din "+numarVoturiNational()+". Adica "+numarVoturiCircumscriptie(numeCircumscriptie)*100/numarVoturiNational()+"%. Cele mai multe voturi au fost stranse de "+CNPCastigatorCircumscriptie(numeCircumscriptie)+" "+numeCastigatorCircumscriptie(numeCircumscriptie)+". Acestea constituie "+nrVoturiCastigatorCircumscriptie(numeCircumscriptie)*100/numarVoturiCircumscriptie(numeCircumscriptie)+"% din voturile circumscriptiei.");
     }
     public void raportDetaliatNational(String idAlegeri){
@@ -389,11 +394,13 @@ public class Analiza {
             }
         });
         System.out.println("In Romania au fost "+numarVoturiNational()+" voturi.");
+        //verificam sa se afiseze o singura data regiunea
         for (Vot vot : Vot.getVotDetaliat()) {
             if (!regiuniUnice.contains(vot.getRegiune())) {
                 regiuniUnice.add(vot.getRegiune());
             }
         }
+        //daca ajungem aici, sunt verificate toate conditiile si afisam rezultatul functiilor
         for(String reg : regiuniUnice) {
             System.out.println("In "+reg+" au fost "+numarVoturiRegiune(reg)+" voturi din "+numarVoturiNational()+". Adica "+numarVoturiRegiune(reg)*100/numarVoturiNational()+"%. Cele mai multe voturi au fost stranse de "+CNPCastigatorRegiune(reg)+" "+numeCastigatorRegiune(reg)+". Acestea constituie "+nrVoturiCastigatorRegiune(reg)*100/numarVoturiRegiune(reg)+"% din voturile regiunii.");
         }

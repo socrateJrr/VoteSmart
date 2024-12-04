@@ -38,7 +38,7 @@ public class Votant extends Persoana{
         this.varsta = varsta;
         this.neindemanatic = neindemanatic;
         this.numeCirc = numeCircumscriptie;
-
+        //verificam conditiile
         if(this.CNP.length() != 13) {
             System.out.println("EROARE: CNP invalid");
             return;
@@ -63,6 +63,7 @@ public class Votant extends Persoana{
                                         return;
                                     }
                              }
+                            // a trecut peste toate conditiile si adaugam votantul
                             listaVotant.add(this);
                             System.out.println("S-a adaugat votantul "+this.nume);
                             return;
@@ -91,6 +92,7 @@ public class Votant extends Persoana{
                                 System.out.println("GOL: Nu sunt votanti in "+numeCircumscriptie);
                                 return;
                             } else {
+                                //sortam si votantii
                                 Collections.sort(listaVotant, new Comparator<Votant>() {
                                     @Override
                                     public int compare(Votant o1, Votant o2) {
