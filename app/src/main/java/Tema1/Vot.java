@@ -67,6 +67,9 @@ public class Vot {
                                                     this.regiune=circumscriptie.getRegiune();
                                                     votDetaliat.add(this);
                                                 }
+                                                else {
+                                                    vot.add(votant);
+                                                }
                                                 System.out.println(votant.getNume() + " a votat pentru " + candidat.getNume());
                                                 return;
                                             } else {
