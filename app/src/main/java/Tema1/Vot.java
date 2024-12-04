@@ -61,7 +61,7 @@ public class Vot {
                                                         return;
                                                     }
                                                 }
-                                                if(votant.getNeindemanatic().equals("da")){
+                                                if(votant.getNeindemanatic().equals("nu")){
                                                     vot.add(votant);
                                                     this.numeCandidat=candidat.getNume();
                                                     this.regiune=circumscriptie.getRegiune();
